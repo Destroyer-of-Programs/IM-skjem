@@ -10,9 +10,9 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100vw;
   position: relative;
-  margin: auto;
+  margin: 0;
 }
 
 /* Caption text */
@@ -37,9 +37,9 @@ img {vertical-align: middle;}
 
 /* The dots/bullets/indicators */
 .dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 0px;
+  width: 0px;
+  margin: 0 0px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -68,42 +68,24 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
+
 </style>
 </head>
 <body>
 
-<h2>Automatic Slideshow</h2>
-<p>Change image every 2 seconds:</p>
-
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
   <img src="https://www.yr.no/nb/innhold/1-2254359/meteogram.svg"    style="width:100%">
-  <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
   <iframe
   title="Entur-widget"
   frameBorder="0"
-  style="display:block;height:480px;width:100%;"
+  style="display:block;height:100vh;width:100%;"
   src="https://mon.ruter.no/departures/59.917753-10.754186">
-
-
   </iframe>
-  <div class="text">Caption Three</div>
 </div>
 
 </div>
@@ -133,7 +115,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 10000); // Change image every 2 seconds
+  setTimeout(showSlides, 1000); // Change image every 2 seconds
 }
 </script>
 
