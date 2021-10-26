@@ -69,4 +69,8 @@ body{
   from {opacity: .4} 
   to {opacity: 1}
 }
-
+#revybilde{
+  display: flex;
+  -ms-flex-item-align: center;
+  -ms-flex-align: center;
+}
