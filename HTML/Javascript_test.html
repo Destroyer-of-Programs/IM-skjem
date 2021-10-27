@@ -5,14 +5,22 @@
     </head>
     <body>
         <script>
-            function myFunction() {
-              var x = document.getElementById("myDIV");
+            function hideFunction() {
+              var x = document.getElementById("revybilde");
               if (x.style.display === "none") {
-                x.style.display = "block";
-              } else {
                 x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+              function showFunction() {
+              var x = document.getElementById("revybilde");
+              if (x.style.display === "none") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
               }
             }
+
             </script>
 
 
@@ -39,8 +47,8 @@
 
     return {dag}; {dato} {maned} {ar}
 
-    if (dag = tuesday){
-        document.getElementById("revybilde").innerHTML.
+    if (dag = Mandag, Onsdag, Torsdag, Fredag, Lørdag, Søndag){
+        document.getElementById("revybilde").innerHTML.style.display = "none";
     }
 
 
