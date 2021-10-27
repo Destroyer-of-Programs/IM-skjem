@@ -4,12 +4,28 @@
         <meta http-equiv="refresh" content="1">
     </head>
     <body>
+        <script>
+            function myFunction() {
+              var x = document.getElementById("myDIV");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+            }
+            </script>
+
+
+        <div id="revybilde">
+            <img src ="Revytirsdag.png">
+        </div>
         <p>100000000000 milliseconds from Jan 1, 1970, is approximately Mar 3, 1973:</p>
         <p id="demo"></p>
         <script>
             const d = new Date();
             document.getElementById("demo").innerHTML = d;
             </script>
+
             <script>
                 const DatoFunksjon = (d) => {
     let maneder =["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"]
@@ -22,8 +38,16 @@
     let ar =d.getFullYear();
 
     return {dag}; {dato} {maned} {ar}
+
+    if (dag = tuesday){
+        document.getElementById("revybilde").innerHTML.
+    }
+
+
   }
             </script>
-            
+
+
+
     </body>
 </html>
