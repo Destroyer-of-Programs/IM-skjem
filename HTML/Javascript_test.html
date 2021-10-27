@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="refresh" content="1">
+    </head>
+    <body>
+        <p>100000000000 milliseconds from Jan 1, 1970, is approximately Mar 3, 1973:</p>
+        <p id="demo"></p>
+        <script>
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d;
+            </script>
+            <script>
+                const DatoFunksjon = (d) => {
+    let maneder =["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"]
+
+    let dager = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
+
+    let dag = dager[d.getDay()];
+    let dato = d.getDate();
+    let maned = maneder[d.getMonth()];
+    let ar =d.getFullYear();
+
+    return {dag}; {dato} {maned} {ar}
+  }
+            </script>
+            
+    </body>
+</html>
