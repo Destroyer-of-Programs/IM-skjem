@@ -1,0 +1,33 @@
+{
+  "schedulePresentations": {
+    "schedulePresentationsById": {
+      "1521e0ae-2d51-4408-8182-78e6d0251671": {
+        "id": "1521e0ae-2d51-4408-8182-78e6d0251671",
+        "presentationLocator": {
+          "name": "a.bpfx",
+          "path": "/Users/knut/Documents/",
+          "networkId": 0,
+          "location": "Local",
+          "assetType": "Project",
+          "scope": "1b62c6ef354baee3"
+        },
+        "dateTime": "1970-01-01T00:00:00.000Z",
+        "duration": 1440,
+        "allDayEveryDay": true,
+        "recurrence": false,
+        "recurrencePattern": "AllDays",
+        "recurrencePatternDaysOfWeek": 127,
+        "recurrenceStartDate": "1970-01-01T00:00:00.000Z",
+        "recurrenceGoesForever": true,
+        "recurrenceEndDate": "2100-12-30T23:59:59.999Z",
+        "interruption": false
+      }
+    },
+    "allSchedulePresentations": [
+      "1521e0ae-2d51-4408-8182-78e6d0251671"
+    ]
+  },
+  "modifiedTime": {
+    "lastModifiedTime": "2021-10-25T07:43:54.041Z"
+  }
+}
