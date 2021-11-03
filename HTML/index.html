@@ -88,10 +88,7 @@
      <!-- Slideshow -->
     <div class="slideshow-container">
 
-      <!--revytirsdag-->
-      <div class="mySlides fade">
-        <img id="revybilde" src="Revytirsdag.png" style="height: 270px;" style="width: 1000px;">
-      </div>
+    
 
        <!-- yr sin svg-fil -->
       <div class="mySlides fade">
@@ -124,8 +121,9 @@
       <span class="dot"></span> 
       <span class="dot"></span> 
       <span class="dot"></span> 
-      <span class="dot"></span>
     </div>
+
+    <button onclick="getprofile()"/>
 
      <!-- End of slideshow -->
 
@@ -157,5 +155,41 @@
      <!-- End of slideshow-funksjon -->
      <script>
        const d = new Date(86400000)
+     </script>
+
+    <!--    <script>
+       function getprofile(){
+        const userAction = async () => {
+  const response = await fetch('https://api.clashroyale.com/v1/players/%232YVUUQCUP', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjE1NmNhMTk5LWE3NWEtNDRjYy04MDk5LTdlNzllOTUyMDczZiIsImlhdCI6MTYzNTkzMzkyOCwic3ViIjoiZGV2ZWxvcGVyLzQzZjAzMjgyLThhMjQtYjg0Mi01ZGVkLTBkMzA5N2RiYTZmMiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI1NC44Ni41MC4xMzkiXSwidHlwZSI6ImNsaWVudCJ9XX0.ch2_YdSlfT6nZqGkSjGPvRSnSmLXpw-uPbu2MwPbw7nk7Aq7wkfCUgvLyM4uqRof-a4bVE8RgNtqj0eU5s4oOQ',
+      'Accept': "*/*"
+    }
+  }).then(
+
+  ).catch();
+    const myJson = await response.json();
+    console.log(response.status)
+    console.log(response.statusText)
+
+    
+    console.log(myJson)
+  }
+       }
+       getprofile();
+     </script> -->
+
+     <script>
+       function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
      </script>
 </html>
