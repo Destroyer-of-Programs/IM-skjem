@@ -1,26 +1,229 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
+    <style>
+      * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
 
-    </head>
+        body{
+          margin:0;
+          height:100%;
+        }
 
-    <body>
-        <p>
-            hello there
-        </p>
-        <p>hello bich
-        </p>
-        <!--
-        <script>
-            const Http = new XMLHttpRequest();
-            const url='https://api.clashroyale.com/v1/players/%239YPGRQ2LP';
-            Http.open("GET", url);
-            Http.setRequestHeader("Authorization", "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjRhYmI2NThmLTE2MGItNDhhOS1hMWVmLTc4NWUxMzY1MGQ0NyIsImlhdCI6MTYzNjQ1ODI5OCwic3ViIjoiZGV2ZWxvcGVyLzQ3NWY2ZmEwLTA3NDItNTdhZC03YTg2LWRlN2QwYmFmZDE0OSIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxNzEuMjMuNi4xMTIiXSwidHlwZSI6ImNsaWVudCJ9XX0.1FWlqOUqd64obAjd65tvwnHsrUVIxV2ZYlfUvbQeZiOJYkcQ5geahIfLIkYPxjMNqMfYmj7O-qizeyVzHhP9BQ")
-            Http.send();
-            Http.onreadystatechange = (e) => {
-                console.log(Http.responseText)
+        .hide{
+          width:0;
+          position:absolute;
+          top:0;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 100vw;
+          position: relative;
+          margin: 0;
+        }
+
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+          position:absolute;
+          top:0;
+          transition: background-color 0.6s ease;
+        }
+
+        .active {
+          background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        #end{
+          width:100;
+          height:100vh;
+          position:relative;
+          background:red;
+        }
+
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+
+
+    </style>
+    <title>Infoskjerm</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <!-- Refresh: 172 800s = 2d -->
+    <meta http-equiv="refresh" content="172 800">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+    <!-- Start of HTML -->
+  <body>
+     <!-- Slideshow -->
+    <div class="slideshow-container">
+
+    
+
+       <!-- yr sin svg-fil -->
+      <div class="mySlides fade">
+        <img src="https://www.yr.no/nb/innhold/1-2254359/meteogram.svg"    style="width:100%">
+      </div>
+
+       <!-- Ruters iframe widget -->
+      <div class="mySlides fade">
+        <iframe
+        title="Entur-widget"
+        frameBorder="0"
+        style="display:block;height:100vh;width:100%;"
+        src="https://mon.ruter.no/departures/59.917753-10.754186">
+        </iframe>
+      </div>
+
+
+      <div class="mySlides fade">
+        <iframe
+        title="Entur-widget"
+        frameBorder="0"
+        style="display:block;height:100vh;width:100%;"
+        src="https://mon.ruter.no/departures/59.911898-10.75038">
+        </iframe>
+      </div>
+      <div class="mySlides fade" id="end">
+
+      </div>
+
+    </div>
+
+     <!-- Dots-->
+    <div class="hide" style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+
+    <button onclick="getprofile()"/>
+
+     <!-- End of slideshow -->
+
+ 
+
+
+
+  </body>
+
+<script>
+  $(document).ready(function() {
+	$("body").css("background-color", "hsla(" + Math.floor(Math.random() * (360)) + ", 75%, 58%, 1)");
+});
+</script>
+
+
+
+
+
+
+
+     <!-- Javscript -->
+    <script>
+
+    // Slideshow-funksjon
+
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+    </script>
+     <!-- End of slideshow-funksjon -->
+     <script>
+       const d = new Date(86400000)
+     </script>
+
+    <!--    <script>
+       function getprofile(){
+        const userAction = async () => {
+  const response = await fetch('https://api.clashroyale.com/v1/players/%232YVUUQCUP', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjE1NmNhMTk5LWE3NWEtNDRjYy04MDk5LTdlNzllOTUyMDczZiIsImlhdCI6MTYzNTkzMzkyOCwic3ViIjoiZGV2ZWxvcGVyLzQzZjAzMjgyLThhMjQtYjg0Mi01ZGVkLTBkMzA5N2RiYTZmMiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI1NC44Ni41MC4xMzkiXSwidHlwZSI6ImNsaWVudCJ9XX0.ch2_YdSlfT6nZqGkSjGPvRSnSmLXpw-uPbu2MwPbw7nk7Aq7wkfCUgvLyM4uqRof-a4bVE8RgNtqj0eU5s4oOQ',
+      'Accept': "*/*"
+    }
+  }).then(
+
+  ).catch();
+    const myJson = await response.json();
+    console.log(response.status)
+    console.log(response.statusText)
+
+    
+    console.log(myJson)
+  }
+       }
+       getprofile();
+     </script> -->
+<!--
+ <script>
+       function httpGetAsync(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            //callback(xmlHttp.responseText);
+            console.log(xmlHttp.responseText)
+            //gjøre greier
+          }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
 }
-        </script>
-        -->
-    </body>
+
+     </script>
+-->
+    
 </html>
