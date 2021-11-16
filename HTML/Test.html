@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-   
     <title>Infoskjerm</title>
     <link rel="stylesheet" href="index.css" type="text/css">
+
     <!-- Refresh: 172 800s = 2d -->
     <meta http-equiv="refresh" content="172 800">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,16 +13,12 @@
   <body>
      <!-- Slideshow -->
     <div class="slideshow-container">
-
-    
-
       <div class="mySlides fade" id="end">
         <div id="header1">Random color on refresh</div>
       </div>
-
     </div>
 
-     <!-- Dots-->
+    <!-- Dots-->
     <div class="hide" style="text-align:center">
       <span class="dot"></span> 
       <span class="dot"></span> 
@@ -30,96 +26,37 @@
       <span class="dot"></span> 
     </div>
 
-    <button onclick="getprofile()"/>
-
-     <!-- End of slideshow -->
-
- 
-
-
-
   </body>
 
-<script>
-  // $(document).ready(function() {
-	// $("body").css("background-color", "hsla(" + Math.floor(Math.random() * (360)) + ", 75%, 58%, 1)");
-// });
-var randomColor = Math.floor(Math.random()*16777215).toString(16);
-var elem = document.getElementById("end");
-elem.style.backgroundColor = "#" + randomColor;
-console.log("randomColor:" + randomColor)
-</script>
+  <script>
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    var elem = document.getElementById("end");
+    elem.style.backgroundColor = "#" + randomColor;
+    console.log("randomColor:" + randomColor)
+  </script>
 
+  <script>
 
+  // Slideshow-funksjon
 
-     <!-- Javscript -->
-    <script>
+  var slideIndex = 0;
+  showSlides();
 
-    // Slideshow-funksjon
-
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 5000); // Change image every 2 seconds
     }
-    </script>
-     <!-- End of slideshow-funksjon -->
-     <script>
-       const d = new Date(86400000)
-     </script>
-
-    <!--    <script>
-       function getprofile(){
-        const userAction = async () => {
-  const response = await fetch('https://api.clashroyale.com/v1/players/%232YVUUQCUP', {
-    method: 'GET',
-    headers: {
-      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjE1NmNhMTk5LWE3NWEtNDRjYy04MDk5LTdlNzllOTUyMDczZiIsImlhdCI6MTYzNTkzMzkyOCwic3ViIjoiZGV2ZWxvcGVyLzQzZjAzMjgyLThhMjQtYjg0Mi01ZGVkLTBkMzA5N2RiYTZmMiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI1NC44Ni41MC4xMzkiXSwidHlwZSI6ImNsaWVudCJ9XX0.ch2_YdSlfT6nZqGkSjGPvRSnSmLXpw-uPbu2MwPbw7nk7Aq7wkfCUgvLyM4uqRof-a4bVE8RgNtqj0eU5s4oOQ',
-      'Accept': "*/*"
-    }
-  }).then(
-
-  ).catch();
-    const myJson = await response.json();
-    console.log(response.status)
-    console.log(response.statusText)
-
-    
-    console.log(myJson)
-  }
-       }
-       getprofile();
-     </script> -->
-<!--
- <script>
-       function httpGetAsync(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            //callback(xmlHttp.responseText);
-            console.log(xmlHttp.responseText)
-            //gjøre greier
-          }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
-
-     </script>
--->
-    
+</script>
 </html>
