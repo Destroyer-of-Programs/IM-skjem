@@ -10,6 +10,7 @@
         body{
           margin:0;
           height:100%;
+          background-color: #fa3232;
         }
 
         .hide{
@@ -122,9 +123,13 @@
   </body>
 
 <script>
-  $(document).ready(function() {
-	$("body").css("background-color", "hsla(" + Math.floor(Math.random() * (360)) + ", 75%, 58%, 1)");
-});
+  // $(document).ready(function() {
+	// $("body").css("background-color", "hsla(" + Math.floor(Math.random() * (360)) + ", 75%, 58%, 1)");
+// });
+var randomColor = Math.floor(Math.random()*16777215).toString(16);
+var elem = document.getElementById("end");
+elem.style.backgroundColor = "#" + randomColor;
+console.log("randomColor:" + randomColor)
 </script>
 
 
