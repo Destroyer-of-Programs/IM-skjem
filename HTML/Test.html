@@ -14,7 +14,7 @@
      <!-- Slideshow -->
     <div class="slideshow-container">
       <div class="mySlides fade" id="end">
-        <div id="header1">Random color on refresh</div>
+        <a style="text-decoration:none;"href="virus.mp4"><div id="header1">Download</div></a>
       </div>
     </div>
 
@@ -32,8 +32,27 @@
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
     var elem = document.getElementById("end");
     elem.style.backgroundColor = "#" + randomColor;
-    console.log("randomColor:" + randomColor)
+
+    var jokes = [
+      'Milkshake',
+      'Kardohydrater +/- kvadratroten av kromosomer = leger',
+      'Du må vel være lei av å jobbe i sjokoldefabrikken i 20år ? Japp japp, det skal være snicekrs og twist.',
+      'Skole',
+      'Jaimes politiske meninger',
+      'Prisene i kantina',
+      'Travis Scott',
+      'CLICK HER3 T0 DOWN LOAD FR3E MONEY NOW!!1!1!',
+    ]
+    function newJoke(){
+      var randomNumber = Math.floor(Math.random()* (jokes.length));
+      document.getElementById('header1').innerHTML = jokes[randomNumber];
+    }
+
+    newJoke()
+
+
   </script>
+
 
   <script>
 
