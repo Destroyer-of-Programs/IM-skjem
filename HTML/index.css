@@ -68,16 +68,37 @@
           background:#ff4545;
         }
         #header1 {
-          font-family: 'Open Sans', sans-serif;
-          font-size: 65px;
-          font-weight: normal;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: #fff;
+          font-size: 65px;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: normal;
           font-weight: bold;
-          position:relative;
-          top: 50%;
-          left:50%;
-          transform: translate(-50%, -50%);
-          margin-right:20%;
+          padding-right:10%;
+          padding-left:10%;
+        }
+
+        #BigBoiiText{
+        }
+        
+        #top{
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          color: #fff;
+          font-family: Trebuchet MS (sans-serif);
+          top: 3vh;
+          font-size: 15px;
+          font-weight: normal;
+          font-weight: bold;
+          position:absolute;
         }
 
         @-webkit-keyframes fade {
